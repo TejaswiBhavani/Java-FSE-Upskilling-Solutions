@@ -1,0 +1,76 @@
+/* ========================================================
+   CSS3 Styling for Final Project Requirements
+   ======================================================== */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 60px; /* Offset for fixed top navbar */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Backgrounds & Colors for Light Mode (Default) */
+.bg-light-alt {
+    background-color: #f2f7fc;
+}
+.hero-banner {
+    background: url('https://images.unsplash.com/photo-1511895426328-dc8714191300?w=1600&fit=crop') center/cover no-repeat;
+    min-height: 50vh;
+    box-shadow: inset 0 0 0 2000px rgba(0,0,0,0.4);
+}
+
+/* Section Spacing & Dividers */
+.section-pad {
+    padding-top: 20px;
+    scroll-margin-top: 75px; 
+}
+.feature-divider {
+    margin: 40px 0;
+    border-top: 2px dashed #ccc;
+    opacity: 0.5;
+}
+
+/* Form inputs & tables */
+.gallery-table {
+    table-layout: fixed;
+    width: 100%;
+}
+.gallery-table td {
+    padding: 15px;
+    vertical-address: middle;
+}
+.gallery-img {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: cover;
+}
+.gallery-img:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3) !important;
+}
+
+/* The Double Click Enlarge Class used in JS */
+.enlarged-img {
+    transform: scale(1.4);
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+}
+
+/* Simple Dark/Light mode styles using body classes (if activated elsewhere) */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+body.dark-mode .bg-light, 
+body.dark-mode .bg-light-alt {
+    background-color: #1e1e1e !important;
+    border-color: #333 !important;
+    color: #fff;
+}
+body.dark-mode .card, body.dark-mode .form-control, body.dark-mode .form-select {
+    background-color: #2a2a2a;
+    color: #fff;
+    border-color: #555;
+}
+body.dark-mode h2, body.dark-mode h4 {
+    color: #4cc9f0 !important;
+}

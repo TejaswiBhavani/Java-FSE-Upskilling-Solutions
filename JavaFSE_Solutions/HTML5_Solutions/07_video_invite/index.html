@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Video Invite</title>
+</head>
+<body>
+    <h2>Event Promo Video</h2>
+    <video controls width="500" oncanplay="document.getElementById('videoMsg').innerText = 'Video ready to play!'">
+        <source src="../../assets/videos/promo_video.mp4" type="video/mp4">
+        Your browser does not support HTML video.
+    </video>
+    <p id="videoMsg" style="color: green; font-weight: bold;"></p>
+
+    <br>
+    <h3>Quick RSVP Form</h3>
+    <form id="rsvpForm">
+        <input type="text" placeholder="Your Name" oninput="window.formIsDirty = true;">
+        <button type="submit" onclick="window.formIsDirty = false;">Submit</button>
+    </form>
+
+    <script>
+        window.formIsDirty = false;
+        window.addEventListener('beforeunload', function (e) {
+            if (window.formIsDirty) {
+                e.preventDefault();
+                e.returnValue = ''; // Shows warning Dialog
+            }
+        });
+    </script>
+</body>
+</html>
+

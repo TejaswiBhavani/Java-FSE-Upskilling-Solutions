@@ -1,0 +1,14 @@
+﻿/* Universal */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Element */
+h2 { color: darkgreen; margin-top: 10px; }
+
+/* ID */
+#mainHeader { text-align: center; padding: 20px; background-color: #eee; }
+
+/* Class */
+.eventCard { border: 1px solid #ccc; padding: 15px; margin: 10px; }
+
+/* Grouping */
+h3, p { font-family: sans-serif; margin-left: 10px; }

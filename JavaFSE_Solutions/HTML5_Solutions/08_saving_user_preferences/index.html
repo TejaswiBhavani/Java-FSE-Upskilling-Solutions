@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Saving User Preferences</title>
+</head>
+<body>
+    <h2>Set Preferred Event Type</h2>
+    <select id="prefEvent" onchange="savePreference()">
+        <option value="">Select Preference...</option>
+        <option value="art">Art & Culture</option>
+        <option value="music">Live Music</option>
+        <option value="tech">Technology</option>
+    </select>
+    
+    <p>We'll remember your selection on reload via <code>localStorage</code>.</p>
+    
+    <button onclick="clearPreferences()">Clear Preferences</button>
+
+    <script>
+        // Retrieve and pre-select on load
+        window.onload = function() {
+            const savedPref = localStorage.getItem('preferredEventType');
+            if (savedPref) {
+                document.getElementById('prefEvent').value = savedPref;
+            }
+        };
+
+        // Save selection
+        function savePreference() {
+            const val = document.getElementById('prefEvent').value;
+            localStorage.setItem('preferredEventType', val);
+            sessionStorage.setItem('currentSessionEvent', val);
+            alert('Preferences saved!');
+        }
+
+        // Clear everything
+        function clearPreferences() {
+            localStorage.removeItem('preferredEventType');
+            sessionStorage.removeItem('currentSessionEvent');
+            document.getElementById('prefEvent').value = "";
+            alert('Preferences cleared for both local and session storage!');
+        }
+    </script>
+</body>
+</html>

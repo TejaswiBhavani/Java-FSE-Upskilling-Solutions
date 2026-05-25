@@ -1,0 +1,5 @@
+﻿[
+    {"id": 1, "name": "Annual Art Fair", "date": "2026-10-01", "location": "Downtown Metro", "category": "Art", "fee": 10},
+    {"id": 2, "name": "Summer Music Fest", "date": "2026-11-20", "location": "City Park", "category": "Music", "fee": 25},
+    {"id": 3, "name": "Local Tech Meetup", "date": "2026-12-05", "location": "Central Library", "category": "Tech", "fee": 0}
+]

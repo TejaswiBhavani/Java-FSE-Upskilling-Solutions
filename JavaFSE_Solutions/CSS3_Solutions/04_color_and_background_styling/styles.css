@@ -1,0 +1,12 @@
+﻿body {
+    /* Fallback color and image */
+    background: #e0e0e0 url('https://via.placeholder.com/150') repeat;
+    color: rgba(33, 33, 33, 0.9); /* RGBA text */
+}
+
+.gradient-header {
+    background: linear-gradient(to right, #007BFF, #00C6FF); /* linear-gradient */
+    color: #FFFFFF; /* Hex color */
+    padding: 40px;
+    text-align: center;
+}

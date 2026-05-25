@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Debugging with DevTools</title>
+    <style>
+        .box { width: 100px; height: 100px; background-color: coral; margin: 10px; }
+    </style>
+</head>
+<body>
+    <h2>Debugging Example</h2>
+    <p>Right click -> Inspect to experiment with the box's CSS!</p>
+    <div class="box"></div>
+    
+    <button onclick="triggerBug()">Calculate (Check Console)</button>
+    
+    <script>
+        console.log("System initialized. Welcome to DevTools debugging.");
+        
+        function triggerBug() {
+            let x = 10;
+            let y = 0;
+            // Add a breakpoint on the next line in DevTools!
+            let result = x / y; 
+            console.warn("Result is: " + result);
+            alert("Check console for the calculation result.");
+        }
+    </script>
+</body>
+</html>

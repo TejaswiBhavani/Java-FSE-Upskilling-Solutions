@@ -1,0 +1,6 @@
+﻿/* Practice Debugging in DevTools Chrome Device Toolbar */
+.buggy-element {
+    width: 600px; /* Fixed width causes issues on small screens */
+    background-color: pink;
+    padding: 20px;
+}

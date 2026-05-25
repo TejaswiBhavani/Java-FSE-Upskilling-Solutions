@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Geolocation Mapping</title>
+</head>
+<body>
+    <h2>Locate Nearest Event</h2>
+    <button onclick="findNearbyEvents()">Find Nearby Events</button>
+    <p id="geoOutput"></p>
+
+    <script>
+        function findNearbyEvents() {
+            const output = document.getElementById('geoOutput');
+            
+            if (!navigator.geolocation) {
+                output.innerText = "Geolocation is not supported by your browser.";
+                return;
+            }
+
+            output.innerText = "Locating...";
+
+            const options = {
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0
+            };
+
+            navigator.geolocation.getCurrentPosition(
+                function(position) {
+                    const lat = position.coords.latitude;
+                    const lon = position.coords.longitude;
+                    output.innerHTML = <strong>Success!</strong><br>Latitude:  + lat + <br>Longitude:  + lon;
+                },
+                function(error) {
+                    switch(error.code) {
+                        case error.PERMISSION_DENIED:
+                            output.innerText = "Error: User denied the request for Geolocation.";
+                            break;
+                        case error.POSITION_UNAVAILABLE:
+                            output.innerText = "Error: Location information is unavailable.";
+                            break;
+                        case error.TIMEOUT:
+                            output.innerText = "Error: The request to get user location timed out.";
+                            break;
+                        default:
+                            output.innerText = "Error: An unknown error occurred.";
+                            break;
+                    }
+                },
+                options
+            );
+        }
+    </script>
+</body>
+</html>
