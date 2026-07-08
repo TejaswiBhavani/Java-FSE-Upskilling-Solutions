@@ -1,16 +1,15 @@
 # Exercise 1: Setting Up JUnit
 
 ## Objective
-This exercise demonstrates how to properly set up a Maven project to include JUnit 5 dependencies and write a basic test class to verify the environment.
+This exercise demonstrates how to properly set up a Maven project to include JUnit 5 dependencies and write a basic test class to verify the environment is correctly configured.
 
-## Technologies Used
-- Java
-- JUnit 5
-- Maven
+## Key Components
+- **`pom.xml`**: Defines the Maven project configuration, specifically including the `junit-jupiter-api` and `junit-jupiter-engine` dependencies necessary for running JUnit 5 tests.
+- **`src/test/java/.../MyFirstTest.java`**: A simple JUnit test class containing a basic `@Test` method to confirm that the testing framework executes successfully.
 
 ## How to Test
-1. Navigate to this directory in your terminal.
-2. Run the Maven test lifecycle to execute all tests:
+1. Open a terminal and navigate to this directory.
+2. Run the tests using Maven:
    ```bash
    mvn test
    ```
