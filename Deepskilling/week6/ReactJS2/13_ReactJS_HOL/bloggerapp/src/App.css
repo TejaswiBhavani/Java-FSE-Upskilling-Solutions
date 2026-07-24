@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  padding: 40px;
+}
+
+.grid-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.column {
+  flex: 1;
+  padding: 0 30px;
+}
+
+.column h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.divider {
+  width: 4px;
+  background-color: green;
+  height: 500px;
+  margin-top: 10px;
+}
+
+.item-card {
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.item-card h3 {
+  margin: 0 0 10px 0;
+  font-size: 22px;
+}
+
+.item-card h4 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.item-card p {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}

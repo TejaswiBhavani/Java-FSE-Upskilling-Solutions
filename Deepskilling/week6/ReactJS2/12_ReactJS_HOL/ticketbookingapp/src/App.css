@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f4f8;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+}
+
+.App {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+h1 {
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.view-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  padding: 30px;
+  margin: 0 auto 30px auto;
+  max-width: 500px;
+  text-align: left;
+}
+
+.view-container h2 {
+  margin-top: 0;
+  color: #2980b9;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 10px;
+}
+
+.flight-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.flight-details li {
+  background: #f8f9fa;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 6px;
+  border-left: 4px solid #3498db;
+}
+
+.note {
+  font-size: 14px;
+  color: #7f8c8d;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+button {
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.book-btn {
+  background-color: #27ae60;
+  color: white;
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.book-btn:hover {
+  background-color: #219653;
+}
+
+.login-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.login-btn:hover {
+  background-color: #2980b9;
+}
+
+.logout-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b;
+}
