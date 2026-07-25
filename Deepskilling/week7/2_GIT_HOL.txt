@@ -1,0 +1,235 @@
+GIT HANDS-ON LAB-2
+
+Experiment Title:
+Implementing Git Ignore to Ignore Unwanted Files and Folders
+
+======================================================================
+OBJECTIVE
+=========
+
+The objective of this experiment is to understand the purpose of the .gitignore file and learn how to ignore unwanted files and folders from being tracked by Git.
+
+======================================================================
+PREREQUISITES
+=============
+
+• Git Bash should be installed on the system.
+• Notepad++ should be configured as the default Git editor.
+• A local Git repository should already exist.
+• A GitHub (or GitLab) repository should be available.
+
+======================================================================
+STEP 1: OPEN THE EXISTING GIT REPOSITORY
+========================================
+
+I opened Git Bash and navigated to my existing Git repository.
+
+Command:
+
+cd GitDemo
+
+Purpose:
+This command changes the current directory to the Git project.
+
+---
+
+To verify that I was inside the repository, I executed:
+
+Command:
+
+git status
+
+Result:
+Git displayed the current status of the repository.
+
+======================================================================
+STEP 2: CREATE A LOG FILE
+=========================
+
+I created a log file inside the repository.
+
+Command:
+
+echo "Sample log file" > sample.log
+
+Purpose:
+This command creates a log file named sample.log.
+
+---
+
+To verify that the file was created, I executed:
+
+Command:
+
+ls
+
+Result:
+The file sample.log was displayed.
+
+======================================================================
+STEP 3: CREATE A LOG FOLDER
+===========================
+
+I created a folder named log.
+
+Command:
+
+mkdir log
+
+Next, I created a text file inside the log folder.
+
+Command:
+
+echo "Log Information" > log/log.txt
+
+Purpose:
+These commands create a folder and a file that will later be ignored by Git.
+
+======================================================================
+STEP 4: CREATE A .gitignore FILE
+================================
+
+I created a .gitignore file in the root directory of the repository.
+
+Command:
+
+touch .gitignore
+
+Purpose:
+This command creates a file named .gitignore.
+
+======================================================================
+STEP 5: EDIT THE .gitignore FILE
+================================
+
+I opened the .gitignore file using Notepad++.
+
+Command:
+
+notepad++ .gitignore
+
+Then I added the following entries.
+
+Contents of .gitignore
+
+*.log
+
+log/
+
+Purpose:
+*.log ignores all files having the .log extension.
+
+log/ ignores the complete log directory.
+
+After saving the file, I closed Notepad++.
+
+======================================================================
+STEP 6: VERIFY THE GIT STATUS
+=============================
+
+I checked the repository status.
+
+Command:
+
+git status
+
+Result:
+Git displayed only the .gitignore file as an untracked file. The sample.log file and the log folder were ignored because they matched the rules specified in the .gitignore file.
+
+======================================================================
+STEP 7: ADD THE .gitignore FILE
+===============================
+
+I added the .gitignore file to the staging area.
+
+Command:
+
+git add .gitignore
+
+Purpose:
+This command stages the .gitignore file for commit.
+
+---
+
+To verify the staging area, I executed:
+
+Command:
+
+git status
+
+Result:
+Git showed that only the .gitignore file was staged for commit.
+
+======================================================================
+STEP 8: COMMIT THE CHANGES
+==========================
+
+I committed the staged changes.
+
+Command:
+
+git commit -m "Added .gitignore file"
+
+Purpose:
+This command saves the .gitignore configuration in the local repository.
+
+Result:
+The commit was created successfully.
+
+======================================================================
+STEP 9: PUSH THE CHANGES TO GITHUB
+==================================
+
+Finally, I pushed the committed changes to the remote repository.
+
+Command:
+
+git push origin main
+
+(Note: If your repository uses the master branch, replace main with master.)
+
+Purpose:
+This command uploads the latest commit to GitHub.
+
+Result:
+The .gitignore file was successfully pushed to the remote repository.
+
+======================================================================
+GIT COMMANDS USED
+=================
+
+cd GitDemo
+
+git status
+
+echo "Sample log file" > sample.log
+
+mkdir log
+
+echo "Log Information" > log/log.txt
+
+touch .gitignore
+
+notepad++ .gitignore
+
+git add .gitignore
+
+git commit -m "Added .gitignore file"
+
+git push origin main
+
+======================================================================
+OUTPUT
+======
+
+Contents of .gitignore
+
+*.log
+
+log/
+
+======================================================================
+CONCLUSION
+==========
+
+In this experiment, I successfully implemented the .gitignore file to ignore unwanted files and folders in a Git repository. I verified that Git did not track files with the .log extension or the log folder. I also committed the .gitignore file and pushed the changes to the remote repository. Through this experiment, I understood how .gitignore helps keep a Git repository clean by excluding unnecessary files from version control.

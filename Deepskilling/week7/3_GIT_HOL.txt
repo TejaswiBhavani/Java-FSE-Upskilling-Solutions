@@ -1,0 +1,307 @@
+GIT HANDS-ON LAB-3
+
+Experiment Title:
+Git Branching and Merging
+
+======================================================================
+OBJECTIVE
+=========
+
+The objective of this experiment is to understand the concepts of Git branching and merging by creating a new branch, making changes, committing those changes, comparing branches, merging the branch into the main branch, and deleting the branch after a successful merge.
+
+======================================================================
+PREREQUISITES
+=============
+
+• Git Bash should be installed on the system.
+• A local Git repository should already exist.
+• A GitHub (or GitLab) repository should be available.
+• P4Merge tool should be installed for visual comparison (if required).
+
+======================================================================
+STEP 1: OPEN THE EXISTING GIT REPOSITORY
+========================================
+
+I opened Git Bash and navigated to my existing Git repository.
+
+Command:
+
+cd GitDemo
+
+Purpose:
+This command changes the current directory to the Git project.
+
+---
+
+To verify the repository status, I executed:
+
+Command:
+
+git status
+
+Result:
+Git displayed the current status of the repository.
+
+======================================================================
+STEP 2: CREATE A NEW BRANCH
+===========================
+
+I created a new branch named GitNewBranch.
+
+Command:
+
+git branch GitNewBranch
+
+Purpose:
+This command creates a new branch without switching to it.
+
+---
+
+To view all available branches, I executed:
+
+Command:
+
+git branch -a
+
+Result:
+All local and remote branches were displayed. The "*" symbol indicated the currently active branch.
+
+======================================================================
+STEP 3: SWITCH TO THE NEW BRANCH
+================================
+
+I switched from the current branch to the newly created branch.
+
+Command:
+
+git checkout GitNewBranch
+
+Purpose:
+This command changes the current working branch to GitNewBranch.
+
+---
+
+To verify the active branch, I executed:
+
+Command:
+
+git branch
+
+Result:
+The "*" symbol appeared beside GitNewBranch, confirming that I was working in the new branch.
+
+======================================================================
+STEP 4: CREATE A NEW FILE
+=========================
+
+I created a new file in the branch.
+
+Command:
+
+echo "This file was created in GitNewBranch." > branchfile.txt
+
+Purpose:
+This command creates a new text file with sample content.
+
+---
+
+To verify the file, I executed:
+
+Command:
+
+cat branchfile.txt
+
+Result:
+The contents of the file were displayed successfully.
+
+======================================================================
+STEP 5: CHECK THE STATUS
+========================
+
+I checked the status of the repository.
+
+Command:
+
+git status
+
+Result:
+Git displayed branchfile.txt as an untracked file.
+
+======================================================================
+STEP 6: ADD THE FILE TO THE STAGING AREA
+========================================
+
+I added the new file to the staging area.
+
+Command:
+
+git add branchfile.txt
+
+Purpose:
+This command stages the file for committing.
+
+======================================================================
+STEP 7: COMMIT THE CHANGES
+==========================
+
+I committed the staged file.
+
+Command:
+
+git commit -m "Added branchfile in GitNewBranch"
+
+Purpose:
+This command saves the staged changes in the current branch.
+
+Result:
+The commit was successfully created.
+
+======================================================================
+STEP 8: SWITCH BACK TO THE MAIN BRANCH
+======================================
+
+After completing the changes, I switched back to the main branch.
+
+Command:
+
+git checkout main
+
+(Note: If your repository uses the master branch, replace main with master.)
+
+Purpose:
+This command changes the current working branch back to the main branch.
+
+======================================================================
+STEP 9: COMPARE THE BRANCHES
+============================
+
+I compared the differences between the main branch and GitNewBranch.
+
+Command:
+
+git diff main GitNewBranch
+
+Purpose:
+This command displays the differences between the two branches in the command line.
+
+---
+
+For visual comparison, P4Merge can be used if it is configured with Git.
+
+======================================================================
+STEP 10: MERGE THE BRANCH
+=========================
+
+I merged GitNewBranch into the main branch.
+
+Command:
+
+git merge GitNewBranch
+
+Purpose:
+This command merges all committed changes from GitNewBranch into the main branch.
+
+Result:
+The merge was completed successfully.
+
+======================================================================
+STEP 11: VIEW THE COMMIT HISTORY
+================================
+
+I viewed the commit history after merging.
+
+Command:
+
+git log --oneline --graph --decorate
+
+Purpose:
+This command displays the commit history in a graphical format.
+
+Result:
+The merged commits were displayed in the Git history.
+
+======================================================================
+STEP 12: DELETE THE BRANCH
+==========================
+
+After confirming that the merge was successful, I deleted the branch.
+
+Command:
+
+git branch -d GitNewBranch
+
+Purpose:
+This command deletes the merged branch from the local repository.
+
+---
+
+To verify the repository status, I executed:
+
+Command:
+
+git status
+
+Result:
+Git displayed that the working tree was clean and the branch had been deleted successfully.
+
+======================================================================
+STEP 13: PUSH THE CHANGES TO GITHUB
+===================================
+
+Finally, I pushed the merged changes to the remote repository.
+
+Command:
+
+git push origin main
+
+(Note: If your repository uses the master branch, replace main with master.)
+
+Purpose:
+This command uploads the latest merged changes to GitHub.
+
+Result:
+The updated repository was successfully pushed to GitHub.
+
+======================================================================
+GIT COMMANDS USED
+=================
+
+cd GitDemo
+
+git status
+
+git branch GitNewBranch
+
+git branch -a
+
+git checkout GitNewBranch
+
+git branch
+
+echo "This file was created in GitNewBranch." > branchfile.txt
+
+cat branchfile.txt
+
+git add branchfile.txt
+
+git commit -m "Added branchfile in GitNewBranch"
+
+git checkout main
+
+git diff main GitNewBranch
+
+git merge GitNewBranch
+
+git log --oneline --graph --decorate
+
+git branch -d GitNewBranch
+
+git status
+
+git push origin main
+
+======================================================================
+CONCLUSION
+==========
+
+In this experiment, I successfully learned how to create a new branch, switch between branches, make changes in a branch, commit the changes, compare branches, merge the branch into the main branch, view the commit history, delete the merged branch, and push the updated repository to GitHub. This experiment helped me understand the Git branching and merging workflow used in collaborative software development.

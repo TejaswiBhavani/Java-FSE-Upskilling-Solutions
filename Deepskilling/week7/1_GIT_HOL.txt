@@ -1,0 +1,298 @@
+GIT HANDS-ON LAB-1
+
+Experiment Title:
+Git Configuration, Notepad++ Integration and Adding a File to Source Code Repository
+
+======================================================================
+OBJECTIVE
+=========
+
+The objective of this experiment is to learn the basic Git workflow by configuring Git, setting up Notepad++ as the default editor, creating a local Git repository, adding files, committing the changes, and pushing the repository to GitHub.
+
+======================================================================
+PREREQUISITES
+=============
+
+• Git Bash should be installed on the system.
+• Notepad++ should be installed.
+• A GitHub account should be created.
+• Internet connection should be available.
+
+======================================================================
+STEP 1: VERIFY GIT INSTALLATION
+===============================
+
+To verify whether Git is installed successfully, I opened Git Bash and executed the following command.
+
+Command:
+git --version
+
+Result:
+The installed Git version was displayed, confirming that Git was installed successfully.
+
+---
+
+Next, I configured my Git username.
+
+Command:
+git config --global user.name "Your Name"
+
+Example:
+git config --global user.name "Hari Tejaswi Bhavani"
+
+Purpose:
+This command sets the username that will be associated with every Git commit.
+
+---
+
+Then, I configured my email address.
+
+Command:
+git config --global user.email "[your_email@example.com](mailto:your_email@example.com)"
+
+Example:
+git config --global user.email "[tejaswibhavanih36@gmail.com](mailto:tejaswibhavanih36@gmail.com)"
+
+Purpose:
+This command sets the email address that will be associated with every Git commit.
+
+---
+
+To verify that both configurations were applied successfully, I executed:
+
+Command:
+git config --global --list
+
+Result:
+The configured username and email address were displayed.
+
+======================================================================
+STEP 2: CONFIGURE NOTEPAD++ AS THE DEFAULT GIT EDITOR
+=====================================================
+
+First, I verified whether Notepad++ could be opened from Git Bash.
+
+Command:
+notepad++
+
+Result:
+If Notepad++ opens successfully, it means the application is available through the system PATH. Otherwise, the Notepad++ installation directory must be added to the Environment Variables.
+
+---
+
+Next, I configured Notepad++ as the default editor for Git.
+
+Command:
+git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -nosession"
+
+Purpose:
+This command configures Notepad++ as the default editor whenever Git requires editing.
+
+---
+
+To verify the configuration, I executed:
+
+Command:
+git config --global -e
+
+Result:
+The Git global configuration file opened in Notepad++, confirming that the editor was configured successfully.
+
+======================================================================
+STEP 3: CREATE A LOCAL GIT REPOSITORY
+=====================================
+
+First, I created a new project directory.
+
+Command:
+mkdir GitDemo
+
+Then I entered the project directory.
+
+Command:
+cd GitDemo
+
+Next, I initialized the Git repository.
+
+Command:
+git init
+
+Result:
+Git created an empty repository inside the project folder and generated the hidden .git directory.
+
+======================================================================
+STEP 4: CREATE A FILE IN THE REPOSITORY
+=======================================
+
+I created a text file named welcome.txt.
+
+Command:
+echo "Welcome to Git" > welcome.txt
+
+Purpose:
+This command creates a new file and writes the given text into it.
+
+---
+
+To verify that the file was created, I executed:
+
+Command:
+ls
+
+Result:
+The file welcome.txt was listed.
+
+---
+
+To display the contents of the file, I executed:
+
+Command:
+cat welcome.txt
+
+Output:
+Welcome to Git
+
+======================================================================
+STEP 5: CHECK THE STATUS OF THE REPOSITORY
+==========================================
+
+Command:
+git status
+
+Purpose:
+This command displays the current status of the repository.
+
+Result:
+Git showed that welcome.txt was an untracked file.
+
+======================================================================
+STEP 6: ADD THE FILE TO THE STAGING AREA
+========================================
+
+Command:
+git add welcome.txt
+
+Purpose:
+This command moves the file from the working directory to the staging area so that it can be committed.
+
+To verify the staging status, I executed:
+
+Command:
+git status
+
+Result:
+Git displayed that welcome.txt was ready to be committed.
+
+======================================================================
+STEP 7: COMMIT THE FILE
+=======================
+
+I committed the staged file using the following command.
+
+Command:
+git commit -m "Initial commit"
+
+Purpose:
+This command saves the staged changes to the local Git repository.
+
+Result:
+The first commit was created successfully.
+
+======================================================================
+STEP 8: CREATE A REMOTE REPOSITORY
+==================================
+
+I created a repository named "GitDemo" on GitHub.
+
+Then, I connected my local repository with the remote repository.
+
+Command:
+git remote add origin https://github.com/username/GitDemo.git
+
+Purpose:
+This command links the local repository with the GitHub repository.
+
+To verify the connection, I executed:
+
+Command:
+git remote -v
+
+Result:
+The remote repository URL was displayed.
+
+======================================================================
+STEP 9: PULL THE REMOTE REPOSITORY
+==================================
+
+Before pushing my code, I pulled the latest changes from the remote repository.
+
+Command:
+git pull origin main
+
+(Note: If the repository uses the master branch, use "master" instead of "main".)
+
+Purpose:
+This command synchronizes the local repository with the remote repository.
+
+======================================================================
+STEP 10: PUSH THE LOCAL REPOSITORY TO GITHUB
+============================================
+
+Finally, I pushed my local repository to GitHub.
+
+Command:
+git push -u origin main
+
+Purpose:
+This command uploads the local repository and all committed changes to GitHub.
+
+Result:
+The repository was successfully pushed to GitHub.
+
+======================================================================
+GIT COMMANDS USED
+=================
+
+git --version
+
+git config --global user.name "Your Name"
+
+git config --global user.email "[your_email@example.com](mailto:your_email@example.com)"
+
+git config --global --list
+
+git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -nosession"
+
+git config --global -e
+
+mkdir GitDemo
+
+cd GitDemo
+
+git init
+
+echo "Welcome to Git" > welcome.txt
+
+ls
+
+cat welcome.txt
+
+git status
+
+git add welcome.txt
+
+git commit -m "Initial commit"
+
+git remote add origin https://github.com/username/GitDemo.git
+
+git remote -v
+
+git pull origin main
+
+git push -u origin main
+
+======================================================================
+CONCLUSION
+==========
+
+In this experiment, I successfully configured Git with my user credentials, configured Notepad++ as the default Git editor, created a local Git repository, added a text file to the repository, committed the changes, connected the repository to GitHub, and successfully pushed the project to the remote repository. Through this exercise, I gained practical knowledge of the basic Git workflow and commonly used Git commands.

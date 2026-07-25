@@ -1,0 +1,368 @@
+GIT HANDS-ON LAB-4
+
+Experiment Title:
+Resolving Merge Conflicts in Git
+
+======================================================================
+OBJECTIVE
+=========
+
+The objective of this experiment is to understand how merge conflicts occur in Git and learn how to resolve them by merging changes from different branches. This experiment also demonstrates updating the .gitignore file, committing the resolved changes, and deleting the merged branch.
+
+======================================================================
+PREREQUISITES
+=============
+
+• Git Bash should be installed on the system.
+• A local Git repository should already exist.
+• P4Merge should be installed for visual comparison (if required).
+• GitHub (or GitLab) repository should be available.
+
+======================================================================
+STEP 1: VERIFY THE REPOSITORY STATUS
+====================================
+
+I opened Git Bash and navigated to my existing Git repository.
+
+Command:
+
+cd GitDemo
+
+To verify that the repository was in a clean state, I executed:
+
+Command:
+
+git status
+
+Result:
+Git displayed "working tree clean", indicating that there were no pending changes.
+
+======================================================================
+STEP 2: CREATE A NEW BRANCH
+===========================
+
+I created a new branch named GitWork.
+
+Command:
+
+git branch GitWork
+
+Then I switched to the newly created branch.
+
+Command:
+
+git checkout GitWork
+
+Purpose:
+This creates and switches to a new branch where separate changes can be made.
+
+======================================================================
+STEP 3: CREATE hello.xml IN THE BRANCH
+======================================
+
+I created a file named hello.xml.
+
+Command:
+
+echo "<message>Hello from GitWork Branch</message>" > hello.xml
+
+Purpose:
+This command creates the XML file with sample content.
+
+---
+
+To verify the file contents, I executed:
+
+Command:
+
+cat hello.xml
+
+======================================================================
+STEP 4: COMMIT THE CHANGES IN THE BRANCH
+========================================
+
+I added the file to the staging area.
+
+Command:
+
+git add hello.xml
+
+Then I committed the changes.
+
+Command:
+
+git commit -m "Added hello.xml in GitWork branch"
+
+Result:
+The changes were successfully committed to the GitWork branch.
+
+======================================================================
+STEP 5: SWITCH TO THE MAIN BRANCH
+=================================
+
+I switched back to the main branch.
+
+Command:
+
+git checkout main
+
+(Note: If your repository uses the master branch, replace main with master.)
+
+======================================================================
+STEP 6: MODIFY hello.xml IN THE MAIN BRANCH
+===========================================
+
+I created the same file with different content.
+
+Command:
+
+echo "<message>Hello from Main Branch</message>" > hello.xml
+
+Purpose:
+This creates a different version of the same file, which will later produce a merge conflict.
+
+---
+
+I staged the file.
+
+Command:
+
+git add hello.xml
+
+Then I committed the changes.
+
+Command:
+
+git commit -m "Added hello.xml in main branch"
+
+======================================================================
+STEP 7: VIEW THE COMMIT HISTORY
+===============================
+
+To observe the commit history, I executed:
+
+Command:
+
+git log --oneline --graph --decorate --all
+
+Result:
+The commit history displayed both the main branch and GitWork branch.
+
+======================================================================
+STEP 8: COMPARE BOTH BRANCHES
+=============================
+
+I compared the differences between the branches.
+
+Command:
+
+git diff main GitWork
+
+Purpose:
+This command displays the differences between both branches.
+
+---
+
+For graphical comparison, P4Merge can also be used if it is configured with Git.
+
+======================================================================
+STEP 9: MERGE THE BRANCH
+========================
+
+I attempted to merge GitWork into the main branch.
+
+Command:
+
+git merge GitWork
+
+Result:
+Git detected that both branches modified the same file and reported a merge conflict.
+
+======================================================================
+STEP 10: RESOLVE THE MERGE CONFLICT
+===================================
+
+I opened the conflicted file.
+
+Command:
+
+notepad++ hello.xml
+
+Git displayed conflict markers similar to the following.
+
+<<<<<<< HEAD
+
+Content from Main Branch
+
+=======
+
+Content from GitWork Branch
+
+> > > > > > > GitWork
+
+I manually removed the conflict markers and combined the required content.
+
+After saving the file, I staged it.
+
+Command:
+
+git add hello.xml
+
+Then I completed the merge by committing the resolved changes.
+
+Command:
+
+git commit -m "Resolved merge conflict"
+
+Result:
+The merge conflict was successfully resolved.
+
+======================================================================
+STEP 11: VERIFY THE REPOSITORY STATUS
+=====================================
+
+Command:
+
+git status
+
+Result:
+Git displayed that the working tree was clean.
+
+======================================================================
+STEP 12: UPDATE THE .gitignore FILE
+===================================
+
+I opened the .gitignore file.
+
+Command:
+
+notepad++ .gitignore
+
+I added the following entry.
+
+*.bak
+
+Purpose:
+This ignores all backup files having the .bak extension.
+
+After saving the file, I staged it.
+
+Command:
+
+git add .gitignore
+
+Then I committed the changes.
+
+Command:
+
+git commit -m "Updated .gitignore file"
+
+======================================================================
+STEP 13: LIST ALL AVAILABLE BRANCHES
+====================================
+
+Command:
+
+git branch
+
+Result:
+Git displayed all the available local branches.
+
+======================================================================
+STEP 14: DELETE THE MERGED BRANCH
+=================================
+
+After confirming that the merge was successful, I deleted the GitWork branch.
+
+Command:
+
+git branch -d GitWork
+
+Purpose:
+This command removes the merged branch from the local repository.
+
+======================================================================
+STEP 15: VIEW THE FINAL COMMIT HISTORY
+======================================
+
+Command:
+
+git log --oneline --graph --decorate
+
+Result:
+The commit history displayed the completed merge along with the resolved commits.
+
+======================================================================
+STEP 16: PUSH THE CHANGES TO GITHUB
+===================================
+
+Finally, I pushed the updated repository to GitHub.
+
+Command:
+
+git push origin main
+
+(Note: If your repository uses the master branch, replace main with master.)
+
+Purpose:
+This command uploads all the latest changes, including the resolved merge conflict, to the remote repository.
+
+======================================================================
+GIT COMMANDS USED
+=================
+
+cd GitDemo
+
+git status
+
+git branch GitWork
+
+git checkout GitWork
+
+echo "<message>Hello from GitWork Branch</message>" > hello.xml
+
+cat hello.xml
+
+git add hello.xml
+
+git commit -m "Added hello.xml in GitWork branch"
+
+git checkout main
+
+echo "<message>Hello from Main Branch</message>" > hello.xml
+
+git add hello.xml
+
+git commit -m "Added hello.xml in main branch"
+
+git log --oneline --graph --decorate --all
+
+git diff main GitWork
+
+git merge GitWork
+
+notepad++ hello.xml
+
+git add hello.xml
+
+git commit -m "Resolved merge conflict"
+
+notepad++ .gitignore
+
+git add .gitignore
+
+git commit -m "Updated .gitignore file"
+
+git branch
+
+git branch -d GitWork
+
+git log --oneline --graph --decorate
+
+git push origin main
+
+======================================================================
+CONCLUSION
+==========
+
+In this experiment, I successfully learned how merge conflicts occur when different changes are made to the same file in multiple branches. I resolved the conflict manually, committed the resolved changes, updated the .gitignore file, deleted the merged branch, and pushed the final changes to GitHub. This experiment provided practical knowledge of handling merge conflicts and maintaining a clean Git repository.

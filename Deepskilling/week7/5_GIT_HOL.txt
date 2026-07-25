@@ -1,0 +1,158 @@
+GIT HANDS-ON LAB-5
+
+Experiment Title:
+Cleaning Up and Pushing Changes to the Remote Git Repository
+
+======================================================================
+OBJECTIVE
+=========
+
+The objective of this experiment is to learn how to verify the repository status, clean up the local repository, synchronize it with the remote repository, and push the latest changes to GitHub (or GitLab).
+
+======================================================================
+PREREQUISITES
+=============
+
+• Git Bash should be installed on the system.
+• A local Git repository should already exist.
+• A GitHub (or GitLab) repository should be available.
+• Internet connection should be available.
+
+======================================================================
+STEP 1: OPEN THE EXISTING GIT REPOSITORY
+========================================
+
+I opened Git Bash and navigated to my existing Git repository.
+
+Command:
+
+cd GitDemo
+
+Purpose:
+This command changes the current directory to the Git project.
+
+======================================================================
+STEP 2: VERIFY THE REPOSITORY STATUS
+====================================
+
+To verify that the repository was in a clean state, I executed:
+
+Command:
+
+git status
+
+Result:
+Git displayed "working tree clean", indicating that there were no pending changes to be committed.
+
+======================================================================
+STEP 3: LIST ALL AVAILABLE BRANCHES
+===================================
+
+I listed all the local and remote branches.
+
+Command:
+
+git branch -a
+
+Purpose:
+This command displays all available local and remote branches in the repository.
+
+Result:
+The current branch was marked with the "*" symbol.
+
+======================================================================
+STEP 4: SWITCH TO THE MAIN BRANCH
+=================================
+
+If I was working in another branch, I switched to the main branch.
+
+Command:
+
+git checkout main
+
+(Note: If your repository uses the master branch, replace main with master.)
+
+Purpose:
+This command switches the current working branch to the main branch before synchronizing with the remote repository.
+
+======================================================================
+STEP 5: PULL THE LATEST CHANGES FROM THE REMOTE REPOSITORY
+==========================================================
+
+I updated my local repository by downloading the latest changes from the remote repository.
+
+Command:
+
+git pull origin main
+
+(Note: If your repository uses the master branch, replace main with master.)
+
+Purpose:
+This command fetches and merges the latest changes from the remote repository into the local repository.
+
+Result:
+The local repository was successfully synchronized with the remote repository.
+
+======================================================================
+STEP 6: VERIFY THE REPOSITORY STATUS
+====================================
+
+After pulling the latest changes, I verified the repository status.
+
+Command:
+
+git status
+
+Result:
+Git confirmed that the local repository was up to date and the working tree was clean.
+
+======================================================================
+STEP 7: PUSH THE LATEST CHANGES TO THE REMOTE REPOSITORY
+========================================================
+
+I pushed all pending commits from the local repository to GitHub.
+
+Command:
+
+git push origin main
+
+(Note: If your repository uses the master branch, replace main with master.)
+
+Purpose:
+This command uploads all committed local changes to the remote repository.
+
+Result:
+The latest changes were successfully pushed to GitHub.
+
+======================================================================
+STEP 8: VERIFY THE REMOTE REPOSITORY
+====================================
+
+I opened my GitHub repository in the web browser and verified that the latest commits and files were successfully reflected in the remote repository.
+
+Result:
+The remote repository displayed all the latest updates, confirming that the push operation was successful.
+
+======================================================================
+GIT COMMANDS USED
+=================
+
+cd GitDemo
+
+git status
+
+git branch -a
+
+git checkout main
+
+git pull origin main
+
+git status
+
+git push origin main
+
+======================================================================
+CONCLUSION
+==========
+
+In this experiment, I successfully verified that the local repository was in a clean state, listed all available branches, synchronized the local repository with the remote repository using the pull command, and pushed the latest committed changes to GitHub. Finally, I verified that all the changes were successfully reflected in the remote repository. This experiment helped me understand the complete workflow of keeping a local repository synchronized with a remote Git repository.
