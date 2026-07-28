@@ -1,4 +1,4 @@
-# Java FSE Upskilling Solutions
+# Java FSE Upskilling and DeepSkilling Solutions
 
 ## Overview
 This repository contains the solutions, projects, and hands-on labs (HOLs) completed as part of the Java FSE upskilling journey. It is structured into three main areas:
